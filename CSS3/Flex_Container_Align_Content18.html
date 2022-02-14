@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Container_Align_Content18.html</title>
+<style>
+  .container{
+    background-color: yellow;
+    display: flex;
+    flex-flow: row wrap;
+    /*테스트시 교차축 방향으로 크기를 적당히 주자*/
+    height: 150px;
+     /*flex-wrap: wrap;이 설정된 상태에서, 아이템들의 줄이 2줄 이상 되었을 때의 
+						           교차축을 따라 아이템들을 정렬하는 방식을 지정
+                       속성값은 justify-content와 동일
+                       아이템들이 한 줄일 경우 align-items 속성 사용
+    */
+    /*align-content: stretch;*//*기본값*/
+    /*align-content: flex-start;*/
+    /*align-content: flex-end;*/
+    /*align-content: center;*/
+    /*align-content: space-between;*/
+    /*align-content: space-around;*/
+    align-content: space-evenly;
+  }
+  /*
+  ※아이템들이 flex-wrap을 통해 여러 줄일 경우에는 align-content 속성이 우선.
+	  따라서 align-items를 사용하려면 align-content 속성을 기본값(stretch)으로 설정해야 한다
+
+  */
+  .item{
+      background-color: green;
+      border: 2px red solid;   
+    }
+  </style>
+</head>
+<body>
+  <h2>Flex Container의 align-content속성</h2>
+  <div class="container">
+    <div class="item" >item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item" >item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+    <div class="item" >item10</div>  
+    <div class="item" >item11</div>
+    <div class="item" >item12</div>
+    <div class="item" >item13</div>
+    <div class="item" >item14</div>
+    <div class="item" >item15</div>
+  </div>
+  
+</body>
+</html>

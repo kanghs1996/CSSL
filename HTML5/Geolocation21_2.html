@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Geolocation21_2.html</title>
+</head>
+<body>
+  <fieldset style="width: 60%;">
+    <legend>Geolocation API : 현재 위치 갱신하기</legend>
+    <button onclick="start()">위치 추적 시작</button>
+    <button onclick="stop()">위치 추적 종료</button><br/>
+    <span id="display" style="color: red; font-size: 1.5em; font-weight: bold;"></span>
+
+</fieldset>
+<script>
+  var span = document.getElementById("display");
+  var watcher;
+
+  function start(){
+    if(navigator.geolocation){//브라우저의 geolocation 지원 여부 판단
+      //PositionOptions객체 설정용]
+      var options ={"timeout":3000,"maximumAge":5000};
+      //현재 위치 정보를 갱신시마다 얻기
+      watcher = navigator.geolocation.watchPosition(successCallback,errorCallback,options);
+      console.log('watcher:',watcher);
+    }
+  }
+  function successCallback(position){     
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      span.innerHTML='위도:'+lat+',경도:'+lng;
+  }
+  function errorCallback(error){
+    switch(error.code){
+        case 1: span.innerHTML="허용이 거부됨";break;
+        case 2: span.innerHTML="위치 확인 불가";break;
+        case 3: span.innerHTML="시간 초과";break;
+        default:span.innerHTML=error.message;
+    }
+  }
+  function stop(){
+    //위치정보 받기 중지
+    navigator.geolocation.clearWatch(watcher);
+    span.innerHTML="위치 추적 중지";
+  }
+
+</script>
+</body>
+</html>

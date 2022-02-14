@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Canvas19_1.html</title>
+</head>
+<body>
+<div>
+  <h2>canvas태그</h2>
+   <!--※캔바스의 가로폭 세로폭은 반드시 속성으로 설정-->   
+   <canvas id="canvas" width="200" height="200" style="background-color: yellow;"></canvas>
+   <script>
+     var canvas = document.getElementById("canvas");
+     var ctx=canvas.getContext('2d');
+     
+     ctx.font='25 굴림체';
+     ctx.fillStyle='blue';//채우기 색상 설정
+    
+     //기준선 보이기]
+     ctx.strokeStyle='red';//선 색상 설정
+     ctx.moveTo(50,20);
+     ctx.lineTo(50,180);
+     ctx.stroke();//선긋기
+
+      //그림자 표시를 위한 설정]
+      ctx.shadowColor ='rgba(192,192,192,0.8)';
+      ctx.shadowOffsetX =5;
+      ctx.shadowOffsetY =5;
+      ctx.shadowBlur = 1;//최대값 100
+
+      //글자 그리기
+      ctx.textAlign='start';
+      ctx.fillText('HTML5_START',50,50);//50,50이 글자를 그리는 시작선(start)
+
+      ctx.textAlign='end';
+      ctx.fillText('HTML5_END',50,80);//50,80이 글자를 그리는 끝선(end)
+
+      ctx.textAlign='center';
+      ctx.fillText('HTML5_CENTER',50,110);//50,100이 글자를 그리는 중간선(end)
+
+      ctx.textAlign='left';
+      ctx.fillText('HTML5_LEFT',50,140);
+
+      ctx.textAlign='right';
+      ctx.fillText('HTML5_RIGHT',50,170);
+
+
+
+
+   </script>
+   
+   
+</div>
+</body>
+</html>

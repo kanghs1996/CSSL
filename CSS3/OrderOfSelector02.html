@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>OrderOfSelector02.html</title>
+
+<!-- embedding style-style태그로 CSS설정-->
+<style>
+  /*
+    [선택자 사이의 우선순위]
+    !important > inline style > id선택자 > class선택자 > 태그선택자> *
+    ※우선 순위가 같다면 태그랑 가까운 CSS가 적용된다(인터프리터 방식 이니까)
+  */
+  
+  h1{
+    color:blue
+  }
+  h1{
+    color:red
+  }
+  #sea{
+    color:blue
+  }
+  .sea{
+    color:red
+  }
+  .mountain{
+    color:green;
+  }
+  li{
+    color:yellow !important;
+  }
+
+  dd{
+    color:blue
+  }
+  .local{
+    color:purple
+  }
+  /*최종 선택한 선택자와 가까운 선택자부터 우선순위 전용*/
+  /* input:enabled > div.depth2와 div#depth2 중 > div#depth1와 div.depth1중 */
+  div#depth1 div.depth2 input:enabled{
+      background-color: red;
+  }
+  div.depth1 div#depth2 input:enabled{
+    background-color: green;
+  }
+ 
+  
+</style>
+<!--외부 CSS 파일을 적용시키기 위해서 link태그 사용(External Style)-->
+<link href="../Styles/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>선택자 종류에 따른 CSS적용순서</h1>
+  <ul>
+      <li class="mountain">관악산</li>
+      <li class="mountain">치악산</li>
+      <!-- inline style(태그안에 style 속성으로 CSS설정)-->
+      <li class="sea" id="sea"  style="color:pink">경포대</li>
+      <li class="sea">해운대</li>
+     
+  </ul>
+  
+  <div class="depth1" id="depth1">
+    <div class="depth2" id="depth2">
+      <input type="text" class="depth3" id="depth3"/>
+    </div>
+  </div>
+
+  <h1>CSS적용 스타일(inline style,embedding style,external style)에 따른 적용 순서</h1>
+  <dl>
+      
+      <dd class="local">종로구</dd>
+      <dd>강서구</dd>
+      <!-- inline style(태그안에 style 속성으로 CSS설정)-->
+      <dd  style="color:red">강동구</dd>
+      <dd>강남구</dd>
+  </dl>
+
+
+</body>
+</html>

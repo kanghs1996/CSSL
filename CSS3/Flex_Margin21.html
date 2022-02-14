@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Margin21.html</title>
+<style>
+  .container{
+    background-color: yellow;
+    display: flex;    
+    /*justify-content:flex-end;*/
+    /*justify-content: flex-start;*//*기본값*/
+    /*justify-content: center;*/
+    /*justify-content: space-around;*/
+    /*justify-content: space-between;*/
+  }
+  .item{
+    background-color: green;
+    border:2px red solid;
+    /*margin:0 auto;*//*justify-content: space-around;와 같다*/
+    /*margin-left: auto;*//*마지막 아이템이 주축 끝선에 붙고 왼쪽의 여백공간 균등 배분*/
+    /*margin-right: auto;*//*첫번째 아이템이 주축 시작선에 붙고 오른쪽의 여백공간 균등 배분*/
+  }
+   /*1번에 margin-left: auto; 3번에 margin-right: auto;는 justify-content:center와 같다*/
+
+   /*margin: 0  auto;아래 각각에 주면서 테스트 */
+  .item:nth-child(1){
+    /*margin-left: auto;*//*justify-content:flex-end;와 같다*/
+    /*margin: 0 auto;*/
+  }
+  .item:nth-child(2){
+    /*margin: 0 auto;*/ /*justify-content: space-between;와 같다*/
+  }
+  .item:nth-child(3){
+    /*margin-right: auto;*//*justify-content: flex-start;와 같다*/
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+  <h2>Flex Item에 margin속성 적용하기</h2>
+  <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+  </div>  
+</body>
+</html>

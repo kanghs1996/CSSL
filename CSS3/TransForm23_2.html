@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>TransForm23_2.html</title>
+<style>
+  #content{
+    display: flex;
+  }
+  #rect1,#rect2{
+    width:100px;
+    height:100px;
+    /*변형을 통한 애니메이션 구현(transition) 즉 변형을 부드럽게 일으키는 속성*/
+    /*변형이 일어나는 시간을 각 속성별로 다르게 주기위함*/
+    /*transition-duration: 4s,3s,2s;*/
+    /* 변형을 가할 css속성 설정*/
+    /*transition-property: background-color,width,height;*/
+    /*
+    transition-duration: 4s;
+    transition-property: all;
+    transition-timing-function: ease-in;    linear,ease-in,ease-out
+    transition-delay:2s ;*/
+    /*https://developer.mozilla.org/ko/docs/Web/CSS/transition*/
+    transition:2s 1s ease;/*생략시 all 2초 지속,1초 지연*/
+  }
+  #rect1{
+    background-color: red;
+  }
+  #rect2{
+    background-color: green;
+  }
+  #rect1:hover{
+    width:300px;
+    height:200px;
+    background-color: rgb(0, 70, 128);    
+  }
+  #rect2:hover{
+    width:200px;
+    height:300px;
+    background-color: rgb(204, 226, 5);    
+  }
+
+
+</style>
+</head>
+<body>
+  <h2>변형-반응선택자와 CSS속성변경을 통해 변형</h2>
+  <div id="content">
+      <div id="rect1"></div>
+      <div id="rect2"></div>
+  </div>
+  <div style="width:100px;height:100px;background-color: gold;"></div>
+</body>
+</html>

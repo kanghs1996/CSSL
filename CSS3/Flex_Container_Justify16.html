@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Container_Justify16.html</title>
+<style>
+  .container{
+    background-color: yellow;
+    display: flex;/*inline-flex일때는 적용불가(여유공간이 없으니까)*/
+    flex-flow:row wrap;
+    /*justify-content: flex-start;*//*기본값*//*주축방향의 여유 공간을 배분*/
+    /*justify-content: flex-end;*//*마지막 아이템이 컨테이너의 끝선에서 정렬*/
+    /*justify-content:center;*/
+    /*justify-content:space-between;*//*첫번째 아이템은 시작선,마지막은 끝선에 붙고 여유공간을 아이템 사이에 균등배분*/
+    /*justify-content: space-around;*//*아이템들의 주변(around)에 균일한 간격을 배분*/
+    justify-content: space-evenly;/*여유 공간을 아이템간 및 시작선 및 끝선에 모두 균등하게 배분-IE와 엣지(Edge)는 미지원*/
+  }
+  .item{
+      background-color: green;
+      border: 2px red solid;   
+    }
+  </style>
+</head>
+<body>
+  <h2>Flex Container의 justify-content속성</h2>
+  <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+    <div class="item">item10</div>  
+  </div>
+</body>
+</html>

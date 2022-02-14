@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Container_Wrap.html</title>
+<style>
+.container{
+  background-color: yellow;
+  display: flex;
+  /*flex-wrap: nowrap;*//*기본값*//*브라우저크기를 줄이면서 테스트-수평 스크롤바가 생긴다 */
+  
+  /*flex-wrap: wrap;*//*브라우저크기를 줄이면서 테스트-다음 축으로 내려간다 */
+  /*height: 200px;*/
+  /*flex-wrap: wrap-reverse;*//*wrap과 동일.시작선이 아래쪽 끝이되고 끝선이 위쪽 끝이 된다*/
+  /*flex-flow:row wrap;*//*축약 속성:flex-direction flex-wrap(row nowrap이 기본값)*//*아래 두 줄과 같다*/
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+.item{
+    background-color: green;
+    border: 2px red solid;   
+  }
+</style>
+</head>
+<body>
+  <h2>Flex Container의 flex-wrap속성</h2>
+  <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+    <div class="item">item7</div>
+    <div class="item">item8</div>
+    <div class="item">item9</div>
+    <div class="item">item10</div>  
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Item_Basis19.html</title>
+<style>
+  .container{
+    background-color: yellow;
+    display:flex;
+  }
+  .item{
+    background-color: green;
+    border:2px red solid;
+    /*flex-basis:아이템의 기본 크기를 설정(아이템 확장/축소의 기준 크기)*/
+    /*flex-basis:auto;*//*기본값으로 width지정시 basis값은 width가 된다.width 미 지정시는 컨텐츠의 크기가 basis값이 된다*/
+    /*width:150px;*/
+    /*
+    flex-basis: 150px;주축방향이 row여서 200px이 적용안되고 150px이 우선함
+    width:200px;*/
+    flex-basis: 0;/*컨텐츠의 크기가 basis값이 되고 widht는 무시된다*/
+    width:200px;
+    height: 150px;
+
+
+  }
+</style>
+</head>
+<body>
+  <h2>Flex Item의 flex-basis속성</h2>
+  <div class="container">
+    <div class="item" >item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item" >item5</div>  
+  </div>
+</body>
+</html>

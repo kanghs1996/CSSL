@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>KeyFrame24.html</title>
+<style>
+  /* 키프레임 규칙(@keyframe)을 이용한 애니메이션*/
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  #wrap{
+    display: flex;
+    flex-direction: column;
+  }
+  #rect{
+    width:100px;
+    height: 100px;
+    background-color: red;
+    /* 애니메이션을 적용하기 위한 CSS속성*/
+    animation-duration: 3s;
+
+    animation-delay: 2s;
+    /*키 프레임 애니 메이션 이름 지정*/
+    animation-name: myani1;
+  }
+  @keyframes myani1 {
+    /* #rect에 키프레임 규칙 적용-그래야 애니메이션이 일어남*/
+    /*방법1*/
+    /*
+    from{
+      width:100px;
+      height: 100px;
+    }
+    to{
+      width:400px;
+      height: 400px;
+      background-color: yellow;
+    }*/
+    /*방법2*/
+    50%{
+      width:250px;
+      height: 250px;
+      background-color: rgb(6, 175, 161);
+    }
+    100%{
+      width:400px;
+      height: 400px;
+      background-color: yellow;
+    }
+  }
+
+  #circ1{
+    width:100px;
+    height: 100px;
+    background-color: green;
+    text-align: center;
+    line-height: 100px;
+    /*
+    position: absolute;
+    left:0;
+    top:100px;*/
+     /* 애니메이션을 적용하기 위한 CSS속성*/
+     animation-duration: 3s;
+    /*키 프레임 애니 메이션 이름 지정*/
+    animation-name: myani2;
+  }
+  @keyframes myani2 {
+    50%{
+      width:200px;
+      height: 150px;
+      line-height: 150px;
+      transform: rotate(180deg);
+      border-radius: 100px;
+    }
+    100%{
+      width:400px;
+      height: 200px;
+      line-height: 200px;
+      transform: rotate(360deg);
+      border-radius: 100px;
+    }
+  }
+  #circ2{
+    width:100px;
+    height: 100px;
+    background-color: blue;  
+    /*
+    position: absolute;
+    left:0;
+    top:200px;*/
+    /* 애니메이션을 적용하기 위한 CSS속성*/
+    /*animation-duration: 3s;*/
+    /*키 프레임 애니 메이션 이름 지정*/
+    /*animation-name: myani3;*/
+     /* 애니메이션 횟수*/
+    /*animation-iteration-count: infinite;*/
+    /* 동시 설정*/
+    animation: myani3 3s infinite;
+
+  }
+  @keyframes myani3 {
+    to{
+      transform: translate(400px,400px);
+    }
+  }
+  /* 마우스 오버시 애니메이션 중지*/
+  #circ2:hover{
+    animation-play-state: paused;
+  }
+  
+</style>
+</head>
+<body>  
+  <div id="wrap">
+    <div id="rect"></div>
+    <div id="circ1">CIRCLE</div>
+    <div id="circ2"></div>
+</div>
+</body>
+</html>

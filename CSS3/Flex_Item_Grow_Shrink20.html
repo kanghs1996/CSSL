@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flex_Item_Grow_Shrink20.html</title>
+<style>
+  .container{
+    background-color: yellow;
+    display: flex;
+  }
+  .item{
+    background-color: green;
+    border:2px red solid;
+    /*flex-grow:0(기본값),flex-shrink:1(기본값)
+    컨테이너를 늘려도 크기는 변하지 않고 줄일때 아이템의 크기가 똑같은 비율로 줄어든다
+    브라우저를 줄였다 늘였다하면서 테스트.단,flex-wrap:nowrap;으로 설정후 테스트
+    */
+    /*
+    width:200px;
+    flex-grow: 0;
+    flex-shrink: 1;*/    
+    /*    
+    flex-grow:1;양수로 지정하면 컨테이너를 채우도록 아이템의 크기가 지정한 비율대로 커진다
+    flex-shrink:1;
+    flex-basis:0;flex-grow:1로 인해 늘어난 아이템의 크기가 flex-basis 
+    */
+    /* 위 3줄의 축약*/   
+    /* 
+    flex:1; 숫자 하나면 flex-grow,flex-shrink는 1 ,flex-basis는 0
+    width: 150px;*/
+  }
+  .item:nth-child(1){
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    order: 2;/*기본값은 0,숫자가 작을 수록 먼저 배치된다(음수도 허용)*/
+  }
+  .item:nth-child(2){
+    flex-basis: 100px;
+    flex-grow: 2;
+    flex-shrink: 2;
+    order: -5;
+  }
+  .item:nth-child(3){
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    order:-1
+  }
+  .item:nth-child(4){
+    flex-basis: 100px;
+    flex-grow: 2;
+    flex-shrink: 2;
+  }
+  .item:nth-child(5){
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+</style>
+</head>
+<body>
+  <h2>Flex Item의 flex-grow 및 flex-shrink속성</h2>
+  <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item" >item5</div>  
+  </div>
+</body>
+</html>
